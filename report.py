@@ -14,15 +14,15 @@ print(df1)
 print(df2)
 print(df3)
 
-values1 = [['Order ID', 'Symbol', 'Quantity', 'Side', 'Name', 'Sector']]
-values2 = [['OrderId', 'ParentOrderId', 'Quantity', 'Broker', 'Price', 'Algo']]
-values3 = [['FillId', 'ClientOrderId', 'Quantity', 'Price']]
+v1 = df1[['Order ID', 'Symbol', 'Quantity', 'Side', 'Name', 'Sector']]
+v2 = df2[['OrderId', 'ParentOrderId', 'Quantity', 'Broker', 'Price', 'Algo']]
+v3 = df3[['FillId', 'ClientOrderId', 'Quantity', 'Price']]
 
-dataframes = [values1, values2, values3]
+dataframes = [v1, v2, v3]
 
-join = pd.concat(dataframes)
+join = pd.concat(dataframes, sort=False)
 
-join.to_excel("output.xlsx")
+join.to_csv("flextradereport.csv")
 
 
 
